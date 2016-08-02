@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 
 import hello from 'store/reducers/hello';
 
-const store = createStore(hello);
+const store = createStore(hello, window.devToolsExtension && window.devToolsExtension());
 
 const setMode = (mode) => store.dispatch({ type: 'SET_MODE', mode });
 
