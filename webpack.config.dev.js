@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map',
   resolve: {
     root: __dirname + '/source'
   },
@@ -17,9 +17,10 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      include: path.join(__dirname, 'source'),
+      exclude: /node_modules/,
+      //include: path.join(__dirname, 'source'),
       query: {
-        presets: ['es2015', 'stage-0', 'react']
+        presets: ['es2015', 'stage-2', 'react']
       }
     }]
   }
