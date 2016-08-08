@@ -1,24 +1,26 @@
+console.log("beat start");
 import test from 'tape';
 import deepFreeze from 'deep-freeze';
 
-import hello from 'store/reducers/hello';
+import beat from 'store/reducers/beat';
 
 test('SET_MODE', nest => {
   nest.test('...initial', assert => {
-    const message = `should set { mode: 'display', subject: 'world' }`;
+    console.log("beat test");
+    const message = `should set {rh: 0, lh: 0}`;
 
     const expected = {
-      mode: 'display',
-      subject: 'World'
+      rh: 0,
+      lh: 0
     };
 
-    const actual = hello();
+    const actual = beat();
 
     assert.deepEqual(actual, expected, message);
     assert.end();
   });
 
-
+/*
   nest.test(`...with { mode: 'edit' }`, assert => {
     const message = 'should set mode to edit mode';
 
@@ -68,4 +70,5 @@ test('SET_MODE', nest => {
     assert.deepEqual(actual, expected, message);
     assert.end();
   });
+*/
 });
