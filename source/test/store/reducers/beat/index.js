@@ -1,12 +1,10 @@
-console.log("beat start");
 import test from 'tape';
 import deepFreeze from 'deep-freeze';
 
 import beat from 'store/reducers/beat';
 
-test('SET_MODE', nest => {
-  nest.test('...initial', assert => {
-    console.log("beat test");
+test('Set rh, lh', nest => {
+  nest.test('initial', assert => {
     const message = `should set {rh: 0, lh: 0}`;
 
     const expected = {
@@ -20,55 +18,54 @@ test('SET_MODE', nest => {
     assert.end();
   });
 
-/*
-  nest.test(`...with { mode: 'edit' }`, assert => {
-    const message = 'should set mode to edit mode';
+  nest.test('SET_RH', assert => {
+    const message = 'should set rh';
 
     const stateBefore = {
-      mode: 'display',
-      subject: 'World'
+      rh: 0,
+      lh: 0
     };
     const action = {
-      type: 'SET_MODE',
-      mode: 'edit'
+      type: 'SET_RH',
+      count: 3
     };
     const expected = {
-      mode: 'edit',
-      subject: 'World'
+      rh: 3,
+      lh: 0
     };
 
     deepFreeze(stateBefore);
     deepFreeze(action);
 
-    const actual = hello(stateBefore, action);
+    const actual = beat(stateBefore, action);
 
     assert.deepEqual(actual, expected, message);
     assert.end();
   });
 
-  nest.test(`...with { subject: 'foo'}`, assert => {
-    const message = 'should set subject to "foo"';
+  nest.test('SET_LH', assert => {
+    const message = 'should set lh';
 
     const stateBefore = {
-      mode: 'display',
-      subject: 'World'
+      rh: 0,
+      lh: 0
     };
     const action = {
-      type: 'SET_SUBJECT',
-      subject: 'foo'
+      type: 'SET_LH',
+      count: 4
     };
     const expected = {
-      mode: 'display',
-      subject: 'foo'
+      rh: 0,
+      lh: 4
     };
 
     deepFreeze(stateBefore);
     deepFreeze(action);
 
-    const actual = hello(stateBefore, action);
+    const actual = beat(stateBefore, action);
 
     assert.deepEqual(actual, expected, message);
     assert.end();
   });
-*/
+
 });
