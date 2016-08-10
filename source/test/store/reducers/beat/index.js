@@ -1,5 +1,6 @@
 import test from 'tape';
 import deepFreeze from 'deep-freeze';
+import {SET_RH, SET_LH} from 'constants/action_types';
 
 import beat from 'store/reducers/beat';
 
@@ -26,7 +27,7 @@ test('Set rh, lh', nest => {
       lh: 0
     };
     const action = {
-      type: 'SET_RH',
+      type: SET_RH,
       value: 3
     };
     const expected = {
@@ -51,7 +52,7 @@ test('Set rh, lh', nest => {
       lh: 0
     };
     const action = {
-      type: 'SET_LH',
+      type: SET_LH,
       value: 4
     };
     const expected = {
