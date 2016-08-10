@@ -1,10 +1,10 @@
 export default (
-  state = {rh: 0, lh: 0}, {type, count} = {}
+  state = {rh: 0, lh: 0}, {type, value} = {}
 ) => {
 
   switch (type) {
-    case 'SET_RH': return {...state, rh: count};
-    case 'SET_LH': return {...state, lh: count};
+    case 'SET_RH': return {...state, rh: value};
+    case 'SET_LH': return {...state, lh: value};
     default: return state;
   }
 

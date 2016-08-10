@@ -27,7 +27,7 @@ test('Set rh, lh', nest => {
     };
     const action = {
       type: 'SET_RH',
-      count: 3
+      value: 3
     };
     const expected = {
       rh: 3,
@@ -52,7 +52,7 @@ test('Set rh, lh', nest => {
     };
     const action = {
       type: 'SET_LH',
-      count: 4
+      value: 4
     };
     const expected = {
       rh: 0,
