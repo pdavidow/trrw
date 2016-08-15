@@ -1,16 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 import createApp from './App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import combinedReducers from './reducers';
 
 const App = createApp(React);
-
-const props = {
-  foo: 'yay!  🎸🎶',
-  title: 'Pure Components Rock',
-  helloClass: 'hello'
-};
+let store = createStore(combinedReducers);
+const rootEl = document.getElementById('root');
 
 render(
-  <App { ...props }></App>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootEl
 );
