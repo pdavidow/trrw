@@ -1,10 +1,11 @@
-import createBeat from 'components/beat';
+import createPiece from 'containers/piece';
 
 export default (React) => (props) => {
-  const Beat = createBeat(React);
+  const Piece = createPiece(React);
+
   return (
     <div>
-      <Beat {...props}/>
+      <Piece />
     </div>
   );
 };
