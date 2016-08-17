@@ -1,11 +1,11 @@
-import createPiece from 'containers/piece';
+import createBeatContainer from 'containers/beatContainer';
 
-export default (React) => (props) => {
-  const Piece = createPiece(React);
+export default (React) => () => {
+  const BeatContainer = createBeatContainer(React);
 
   return (
     <div>
-      <Piece />
+      <BeatContainer />
     </div>
   );
 };

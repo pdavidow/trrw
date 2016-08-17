@@ -20,43 +20,15 @@ test('Beat', nest => {
 
     const el = <Beat { ...props } />;
     const $ = dom.load(render(el));
-    const output = $.html();
 
     const actual = {
-      rh: Boolean($(`.${ props.rhClass }`).html()),
+      rh: Boolean($(`.${ props.rhClass }`).html()), // todo centralize these className contants onto Beat module etc.
       lh: Boolean($(`.${ props.lhClass }`).html())
     };
 
     const expected = {
       rh: true,
       lh: true
-    };
-
-    assert.deepEqual(actual, expected, msg);
-    assert.end();
-  });
-
-  nest.test('rh, lh default content', assert => {
-    const msg = 'Should have rh, lh default values';
-
-    const props = {
-      beatClass: 'beat',
-      rhClass: 'rh',
-      lhClass: 'lh'
-    };
-
-    const el = <Beat { ...props } />;
-    const $ = dom.load(render(el));
-    const output = $.html();
-
-    const actual = {
-      rh: $(`.${ props.rhClass }`).innerText,
-      lh: $(`.${ props.lhClass }`).innerText,
-    };
-
-    const expected = {
-      rh: 0,
-      lh: 0
     };
 
     assert.deepEqual(actual, expected, msg);

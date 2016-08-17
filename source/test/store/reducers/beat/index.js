@@ -68,5 +68,4 @@ test('Set rh, lh', nest => {
     assert.deepEqual(actual, expected, message);
     assert.end();
   });
-
 });
