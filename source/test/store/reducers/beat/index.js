@@ -1,6 +1,6 @@
 import test from 'tape';
 import deepFreeze from 'deep-freeze';
-import {SET_RH, SET_LH} from 'constants/action_types';
+import {SET_RH, SET_LH} from 'constants/actionTypes';
 
 import beat from 'store/reducers/beat';
 

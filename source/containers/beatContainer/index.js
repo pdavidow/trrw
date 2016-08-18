@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import createBeat from 'components/beat';
 
 export default (React) => {
@@ -13,3 +13,4 @@ export default (React) => {
     mapStateToProps
   )(Beat);
 };
+

@@ -8,7 +8,7 @@ import createBeat from 'components/beat';
 const Beat = createBeat(React);
 const render = reactDom.renderToStaticMarkup;
 
-test('Beat', nest => {
+test('Beat component', nest => {
   nest.test('rh, lh structure', assert => {
     const msg = 'Should have rh, lh classes';
 

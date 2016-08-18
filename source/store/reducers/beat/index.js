@@ -1,4 +1,4 @@
-import {SET_RH, SET_LH} from 'constants/action_types';
+import {SET_RH, SET_LH} from 'constants/actionTypes';
 
 export default (
   state = {rh: 0, lh: 0}, {type, value} = {}
