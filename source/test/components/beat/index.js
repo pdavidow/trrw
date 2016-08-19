@@ -12,18 +12,13 @@ test('Beat component', nest => {
   nest.test('rh, lh structure', assert => {
     const msg = 'Should have rh, lh classes';
 
-    const props = {
-      beatClass: 'beat',
-      rhClass: 'rh',
-      lhClass: 'lh'
-    };
-
-    const el = <Beat { ...props } />;
+    const props = {rh: 0, lh: 0};
+    const el = <Beat {...props} />;
     const $ = dom.load(render(el));
 
     const actual = {
-      rh: Boolean($(`.${ props.rhClass }`).html()), // todo centralize these className contants onto Beat module etc.
-      lh: Boolean($(`.${ props.lhClass }`).html())
+      rh: Boolean($('.rh').html()),
+      lh: Boolean($('.lh').html())
     };
 
     const expected = {

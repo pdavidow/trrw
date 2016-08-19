@@ -1,16 +1,16 @@
 export default (React) => {
 
   const {
-    string, number
+    number
   } = React.PropTypes;
 
-  const Beat = ({beatClass, rhClass, lhClass, rh, lh}) => {
+  const Beat = ({rh, lh}) => {
     return (
-      <div className={beatClass}>
-        <div className={rhClass}>
+      <div className='beat'>
+        <div className='rh'>
           <p> rh: {rh} </p>
         </div>
-        <div className={lhClass}>
+        <div className='lh'>
           <p> lh: {lh} </p>
         </div>
       </div>
@@ -18,9 +18,6 @@ export default (React) => {
   };
 
   Beat.propTypes = {
-    beatClass: string.isRequired,
-    rhClass: string.isRequired,
-    lhClass: string.isRequired,
     rh: number.isRequired,
     lh: number.isRequired,
   };
