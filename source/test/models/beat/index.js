@@ -1,7 +1,7 @@
 import test from 'tape';
-import {tickCount, rhTickIndices, lhTickIndices} from 'modules/beat';
+import {tickCount, rhTickIndices, lhTickIndices} from 'models/beat';
 
-test('Beat module', nest => {
+test('Beat model', nest => {
   nest.test('tick count', assert => {
     const msg = 'Beat tick count should equal lowest common multiple of rh and lh';
 
@@ -20,7 +20,7 @@ test('Beat module', nest => {
     assert.end();
   });
   nest.test('rh tick indices', assert => {
-    const msg = 'Beat hand should know its tick indices';
+    const msg = 'Right hand should know its tick indices';
 
     const actual1 = rhTickIndices({rh: 3, lh: 1});
     const expected1 = [0,1,2];
@@ -41,7 +41,7 @@ test('Beat module', nest => {
     assert.end();
   });
   nest.test('lh tick indices', assert => {
-    const msg = 'Beat hand should know its tick indices';
+    const msg = 'Left hand should know its tick indices';
 
     const actual1 = lhTickIndices({rh: 3, lh: 1});
     const expected1 = [0];
