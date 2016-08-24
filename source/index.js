@@ -1,17 +1,9 @@
-import React from 'react';
-import { render } from 'react-dom';
-import createApp from './App';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import combinedReducers from 'store/reducers';
+import ReactDOM from 'react-dom';
 
-const App = createApp(React);
-let store = createStore(combinedReducers);
-const rootEl = document.getElementById('root');
+import AppRoot from './components/AppRoot.js';
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  rootEl
+ReactDOM.render(
+  AppRoot,
+  document.getElementById('app-root')
 );
+
